@@ -345,12 +345,9 @@ class PostController extends Controller
 
 ---
 
-## 🔒 **Security Considerations**
+## 🔒 **Security**
 
-- **Sensitive Data**: Be careful not to log sensitive information like passwords or tokens
-- **Performance**: Consider the performance impact of logging all requests in high-traffic applications
-- **Storage**: Implement regular cleanup of old logs to manage database size
-- **Privacy**: Ensure compliance with privacy regulations when logging user activities
+If you discover any security-related issues, please email constantinomsigwa@gmail.com instead of using the issue tracker.
 
 ---
 
@@ -377,12 +374,6 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 
-## 🔒 **Security**
-
-If you discover any security-related issues, please email security@varatech.com instead of using the issue tracker.
-
----
-
 ## 📝 **Changelog**
 
 Please see [CHANGELOG.md](CHANGELOG.md) for more information on what has changed recently.
@@ -395,10 +386,42 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ---
 
+## 🏢 **About VaraAI**
+
+**Vara-AI Tech** is a technology company specializing in Laravel packages and SaaS solutions. We're building a comprehensive ecosystem of Laravel tools to help developers build better applications faster.
+
+### 🚀 **Our Laravel Package Ecosystem**
+
+- **🔐 [Laravel SaaS Auth](https://github.com/VaraAI/laravel-saas-auth)** - Complete SaaS authentication system
+- **📱 [VaraSMS](https://github.com/VaraAI/varasms)** - SMS integration package  
+- **⚡ [Recharge Meter](https://github.com/VaraAI/recharge-meter)** - Utility management system
+- **📊 [Activity Monitor](https://github.com/VaraAI/activity-monitor)** - User activity logging *(this package)*
+
+### 🌐 **Connect with VaraAI**
+
+- **Organization**: [github.com/VaraAI](https://github.com/VaraAI)
+- **Website**: [varaai.tech](https://varaai.tech)
+- **YouTube**: [Vara AI Tech](https://www.youtube.com/@vara-ai-tech)
+- **Location**: Korea, South
+- **Management**: iPROTE Technology Company Limited
+
+---
+
 ## 🌟 **Credits**
 
-- [VaraTech Team](https://github.com/varatech)
-- [All Contributors](../../contributors)
+- [**Vara-AI Tech**](https://varaai.tech) - Lead Developer
+- [**VaraAI Organization**](https://github.com/VaraAI) - Package Maintainer  
+- [**iPROTE Technology Company Limited**](https://github.com/VaraAI) - Management
+- [All Contributors](https://github.com/VaraAI/activity-monitor/contributors)
+
+### 📞 **Contact & Support**
+
+- **🌐 Website**: [varaai.tech](https://varaai.tech)
+- **📧 Email**: constantinomsigwa@gmail.com
+- **🐙 GitHub**: [@VaraAI](https://github.com/VaraAI)
+- **📺 YouTube**: [@vara-ai-tech](https://www.youtube.com/@vara-ai-tech)
+- **🐛 Issues**: [Report Issues](https://github.com/VaraAI/activity-monitor/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/VaraAI/activity-monitor/discussions)
 
 ---
 

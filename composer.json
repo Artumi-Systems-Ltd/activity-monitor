@@ -7,8 +7,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "VaraTech",
-            "email": "info@varatech.com"
+            "name": "Vara-AI Tech",
+            "email": "constantinomsigwa@gmail.com",
+            "homepage": "https://varaai.tech",
+            "role": "Developer"
+        },
+        {
+            "name": "VaraAI Organization",
+            "homepage": "https://github.com/VaraAI",
+            "role": "Maintainer"
         }
     ],
     "require": {
@@ -45,5 +52,9 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "support": {
+        "issues": "https://github.com/VaraAI/activity-monitor/issues",
+        "source": "https://github.com/VaraAI/activity-monitor"
     }
 } 
