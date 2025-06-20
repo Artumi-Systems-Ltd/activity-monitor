@@ -1,0 +1,90 @@
+
+## 📦 **Laravel User Activity Monitor**
+
+> A lightweight, configurable Laravel package to **log and monitor user activities** in your application. Capture login, logout, CRUD actions, API requests, and more — complete with IP address, user agent, and custom properties.
+
+---
+
+### ✨ **Features**
+
+✅ Automatically logs user actions (login, logout, create, update, delete)
+✅ Tracks model events for specified models
+✅ Records metadata: user ID, IP address, user agent, URL, timestamps
+✅ Easy-to-query activity logs (`Activity::forUser($id)->recent()`)
+✅ Customizable: enable/disable features via config
+✅ Extendable: hook into activity logging for custom actions
+✅ Clean database schema with optional JSON properties
+
+---
+
+### ⚡ **Installation**
+
+```bash
+composer require varatech/activity-monitor
+```
+
+Publish config & migration:
+
+```bash
+php artisan vendor:publish --tag="activity-monitor-config"
+php artisan vendor:publish --tag="activity-monitor-migrations"
+php artisan migrate
+```
+
+---
+
+### 🔧 **Basic usage**
+
+```php
+use YourVendor\ActivityMonitor\Facades\ActivityMonitor;
+
+// Manually log an activity
+ActivityMonitor::log('custom_action', [
+    'note' => 'Something happened',
+]);
+
+// Query activities
+$recent = Activity::forUser(auth()->id())->recent(20);
+```
+
+---
+
+### 🛠 **Configuration**
+
+```php
+return [
+    'log_all_requests' => true, // Enable global request logging
+    'track_models' => [
+        App\Models\Post::class,
+        App\Models\Order::class,
+    ],
+];
+```
+
+---
+
+### 🚀 **Example use cases**
+
+* Audit trails for admin actions
+* Security monitoring (e.g. detect suspicious logins)
+* API usage analytics
+* User behavior tracking
+
+---
+
+### 🌱 **Planned enhancements**
+
+* Dashboard UI for activity logs
+* Export logs (CSV, JSON)
+* Real-time broadcasting (WebSockets)
+* Notifications on critical actions
+
+---
+
+### 📖 **License**
+
+MIT
+
+---
+
+

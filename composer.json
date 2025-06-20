@@ -1,0 +1,49 @@
+{
+    "name": "varatech/activity-monitor",
+    "description": "A lightweight, configurable Laravel package to log and monitor user activities",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": ["laravel", "activity", "monitoring", "audit", "logging"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "VaraTech",
+            "email": "info@varatech.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/database": "^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "phpunit/phpunit": "^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VaraTech\\ActivityMonitor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VaraTech\\ActivityMonitor\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VaraTech\\ActivityMonitor\\ActivityMonitorServiceProvider"
+            ],
+            "aliases": {
+                "ActivityMonitor": "VaraTech\\ActivityMonitor\\Facades\\ActivityMonitor"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    }
+} 
