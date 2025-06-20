@@ -19,6 +19,8 @@
 ✅ **Clean Schema**: Clean database schema with optional JSON properties  
 ✅ **Console Commands**: Built-in commands for cleanup and statistics  
 ✅ **Traits Available**: Use `LogsActivity` trait for automatic model tracking  
+✅ **Laravel 9-12 Compatible**: Full support for Laravel 9.x, 10.x, 11.x, and 12.x  
+✅ **PHP 8.1-8.3 Ready**: Compatible with modern PHP versions
 
 ---
 
