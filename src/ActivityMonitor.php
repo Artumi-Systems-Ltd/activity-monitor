@@ -14,7 +14,7 @@ class ActivityMonitor
     public function log(string $action, array $properties = [], $subject = null, string $description = null): Activity
     {
         $activity = new Activity();
-        
+
         $activity->fill([
             'action' => $action,
             'description' => $description,
@@ -34,7 +34,11 @@ class ActivityMonitor
             $activity->subject_id = $subject->getKey();
         }
 
-        $activity->save();
+        try {
+            $activity->save();
+        } catch (QueryException $e) {
+            //Some junk was sent through that the database didn't like
+        }
 
         return $activity;
     }
@@ -46,7 +50,7 @@ class ActivityMonitor
     {
         $action = "model.{$event}";
         $description = $this->generateModelEventDescription($event, $model);
-        
+
         $properties = array_merge($properties, [
             'model_class' => get_class($model),
             'model_id' => $model->getKey(),
@@ -55,11 +59,27 @@ class ActivityMonitor
         return $this->log($action, $properties, $model, $description);
     }
 
+
+    public function useragentsToIgnore(): array
+    {
+        return [
+            "HetrixTools Uptime Monitoring Bot. https://hetrix.tools/uptime-monitoring-bot.html"
+        ];
+    }
+
     /**
      * Log a request.
      */
     public function logRequest(Request $request, array $properties = []): Activity
     {
+
+        $userAgent = $request->userAgent();
+
+        // Skip logging for ignored user agents
+        if (in_array($userAgent, $this->useragentsToIgnore(), true)) {
+            return null;
+        }
+
         $properties = array_merge($properties, [
             'route_name' => $request->route() ? $request->route()->getName() : null,
             'parameters' => $request->except(['password', 'password_confirmation', '_token']),
@@ -74,9 +94,9 @@ class ActivityMonitor
     public function logAuth(string $event, $user = null, array $properties = []): Activity
     {
         $user = $user ?: Auth::user();
-        
+
         $activity = new Activity();
-        
+
         $activity->fill([
             'action' => "auth.{$event}",
             'description' => $this->generateAuthEventDescription($event, $user),
@@ -155,4 +175,4 @@ class ActivityMonitor
             default => "Authentication event: {$event} for {$userName}",
         };
     }
-} 
+}
